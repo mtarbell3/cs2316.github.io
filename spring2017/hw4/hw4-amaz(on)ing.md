@@ -31,7 +31,7 @@ Notes:
 
 ## Problem Description
 
-You have just been hired as a data analyst for Amazon.  Your first assignment on the job is to analyze the review data for food products sold on Amazon.com.  To assist in your analysis, you have been given a [CSV file](reviews.csv) with information pertaining to more than 500,000 reviews from the site.
+You have just been hired as a data analyst for Amazon.  Your first assignment on the job is to analyze the review data for food products sold on Amazon.com.  To assist in your analysis, you have been given a CSV file (see T-Square) with information pertaining to more than 500,000 reviews from the site.
 
 Each row in the CSV file contains the productID of the product being reviewed, the userID of the person making the review, the profile name of the reviewer, the helpfulnessNum and helpfulnessDen (which correspond the the numerator and denominator of the fraction of people who marked the review as helpful), the score given by the review, the time of the review, the title of the review, and the text of the review.
 
@@ -47,11 +47,11 @@ To get credit for this assignment, you must complete all of the tasks using a Pa
 
 Before the data can be analyzed, it must be imported.  Use the read_csv method from the Pandas module to read the data into a Pandas DataFrame.  The `pandas.read_csv()` method has many optional arguments that can be used to help it work for a wide variety of csv files.  When importing the reviews.csv file, set the encoding argument to "latin-1" and specify the data types of both of the helpfulness columns as np.float64.
 
-Before moving on, be sure that the DataFrame was set up correctly.  The .head(n) method will display the first n rows of the DataFrame, default 5.
+Before moving on, be sure that the DataFrame was set up correctly.  The `.head()` method will display the first n rows of the DataFrame, default 5.
 
 Once you are sure that the csv file was read in correctly, add a couple of columns to the DataFrame.  Notice that the "time" column consists of Unix timestamps.  Add a "datetime" column to the DataFrame - where the dates are represented as datetime objects - so that the dates are readable.  Also, add a "text_length" column which contains the number of characters in the text of the review.  These can be added in one line each using Pandas (and some functional programming for the character count).
 
-Finally, use the drop_duplicates() method to ensure that any duplicate rows found in the existing csv file are not included in the DataFrame used for the analysis.
+Finally, use the `drop_duplicates()` method to ensure that any duplicate rows found in the existing csv file are not included in the DataFrame used for the analysis.  Any rows with the same userID and time should be considered duplicate rows, since a user cannot post 2 reviews at the same time.
 
 
 ## Part 1 - Beginning Analysis
@@ -67,7 +67,7 @@ To get comfortable with Pandas and iPython Notebooks, complete the tasks below a
 
 ## Part 2 - Grouping Data
 
-In Pandas, the groupby command allows you to group the data together using certain columns, and perform calculations "groups" of rows.  Use the groupby command to help complete the tasks below:
+In Pandas, the groupby command allows you to group the data together using certain columns, and perform calculations on "groups" of rows.  Use the groupby command to help complete the tasks below:
 
 - Find the number of (unique) products in the dataset
 - Find the 5 products with the most reviews.  Display both the product IDs and the corresponding number of reviews
